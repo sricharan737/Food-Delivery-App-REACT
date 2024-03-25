@@ -1,0 +1,30 @@
+
+● Difference between a Library and Framework?
+
+When you use a library, you are in charge of the flow of the application. You are choosing when and where to call the library. When you use a framework, the framework is in charge of the flow. It provides some places for you to plug in your code, but it calls the code you plugged in as needed.
+
+● What is CDN? Why do we use it?
+
+CDN is a network of servers linked together with the goal of delivering content as quickly, cheaply, reliably, and securely as possible. In order to improve speed and connectivity, a CDN will place servers at the exchange points between different networks.
+
+● Why is React known as React?
+
+React is aptly named because: It "reacts" quickly to changes without reloading the whole page. It uses the virtual DOM to efficiently update parts of a webpage. It's built around components that "react" and update.
+
+● What is crossorigin in script tag?
+
+The crossorigin attribute sets the mode of the request to an HTTP CORS Request. Web pages often make requests to load resources on other servers. Here is where CORS comes in. A cross-origin request is a request for a resource (e.g. style sheets, iframes, images, fonts, or scripts) from another domain.
+
+● What is diference between React and ReactDOM
+
+React is the library we use for javascript apps, whereas REACTDOM is the one which glues the React Virtual DOM to the browsers actual DOM.
+
+● What is difference between react.development.js and react.production.js files via CDN?
+
+By default, React. js builds your project in development mode, which includes features like detailed error messages and debugging tools. However, when you're ready to deploy your application, it's important to build it in production mode to benefit from optimized performance and reduced bundle size.
+
+● What is async and defer?
+
+with the <script async   src........  the script will get fetched along with the html parsing and when the scripts are available the script runs and then the html parsing resumes
+
+with <script defer src.....  attribute the html parsing and scripts fetching happens parallely and the scripts are executed only at the end opf the html parsing 
