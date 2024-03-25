@@ -1,0 +1,46 @@
+-What is NPM ? 
+NPM has no true full form, but it is a node package manager which mamages different packages and libraries needed for the app to run. I tinstalls the needed
+node modules for the app.
+
+-What is Parcel/Webpack and why do we need it ?
+Parcel is a bundler which is one of the most important component in the app, we need it for multiple reasons like:
+- Making the code optimized, tree shaking, multiple browser support, dev build, it gives us a local server for us to host
+Faster builds, Caching, Hot module replacement, File Watching algorith and many more uses
+
+-What is parcel-cache?
+Its the cache memory used to make the project server to run faster and stores all the instances of the project for any change made to reflect in server
+
+-What is 'npx'?
+It is used to execute a particular library in npm for example we use it to run any parcel commands
+
+-What is the differce between dependencies and devdependencies ?
+devdependencies are dependencies needed during the dev phase and not required for prod, where as the regular dependencies are required for the overall app
+
+-What is Tree Shaking?
+Using parcel we get a feature called tree shaking which removes any unused code for example and depreciated functions, methods or variables.
+
+-What is Hot Module Replacement?
+Hot Module Replacement (HMR) exchanges, adds, or removes modules while an application is running, without a full reload. This can significantly speed up development in a few ways:
+
+Retain application state which is lost during a full reload.
+Save valuable development time by only updating what's changed.
+Instantly update the browser when modifications are made to CSS/JS in the source code, which is almost comparable to changing styles directly in the browser's dev tools.
+
+-What is .gitignore? 
+it is a file which states which folders or files to exclude from being added to remote git as not all the files are needed to be added like:
+node modules, parcel cache, dist etc which can be generated whenever needed.
+
+-Difference between package.json and package-lock.json ?
+package has all the required libraries and dependencies required for the project whereas package-lock has all the exact versions
+for the dependencies with the version numbers and their dependencies to other dependencies.
+
+-Why should I not modify package-lock ?
+because you might mess up the cross relation of dependencies by changing any versions and might break the app.
+
+-What is is dist folder?
+It is the folder which has the running instance of the server if you check the files we can see that the compressed code is present after 
+the prod version of code is hosted on the server.
+
+-What is browserlists ?
+This is added to the package json file to give different browsers the compatability, we can specify the versions for each or in general.
+
