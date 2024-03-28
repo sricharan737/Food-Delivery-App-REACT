@@ -1,0 +1,14 @@
+1. What is React Fragment ? 
+React Fragments allow you to wrap or group multiple elements without adding an extra node to the DOM. 
+This can be useful when rendering multiple child elements/components in a single parent component.Ex: <div> </div>
+
+2. What is Virtual DOM?
+The virtual DOM (VDOM) is a programming concept where an ideal, or “virtual”, 
+representation of a UI is kept in memory and synced with the “real” DOM by a library such as ReactDOM. This process is called reconciliation.
+
+3.What is React Fiber?
+React fiber is a complete rewrite of react that fixes a few long-standing issues and offers incredible and offers opportunities heading into the future. 
+Goals of React Fiber: Fiber focuses on animations and responsiveness. It has the ability to split work into chunks and prioritize tasks.
+
+4.What is a Config Driven UI ?
+Config-driven UI is a technique that allows you to create dynamic and customizable UIs without hard coding them.

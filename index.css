@@ -1,3 +1,79 @@
-#heading {
-    color: chartreuse;
+.header {
+    display: flex;
+    justify-content: space-between  ;
+    border-bottom: 1px solid black;
+    height: 120;
 }
+
+.Logo > img {    
+    padding: 5px;
+    width: 100px;
+    height: 100px;
+    }
+
+.NAV-items >ul {
+    display: flex;
+    list-style: none;
+    font-size: 20px;
+}
+
+.NAV-items > ul > li {
+    padding-left: 10px;
+    margin: 10px;
+    font-size: 70;
+    padding:5px 5px;
+    font-size: 20px;
+}
+
+.res-card:hover {
+    cursor: pointer;
+    border: 10px solid darkgrey;
+}
+
+.res-card {
+    font-size: 12px;
+    width: 10%;
+    height: 10%;
+    text-align: center;
+    background-color: rgb(231, 229, 227);
+    padding: 2px 2px 2px;
+    margin: 2px;
+}
+
+
+.Rating {
+    text-align: right;
+    
+}
+
+.DeliveryTime {
+    text-align: right;
+    
+}
+
+.DeliveryCost {
+    text-align: right;
+    
+}
+
+.Cardtext {
+    padding: 8px 8px 8px;
+}
+
+.SearchBar {
+    font-size: 20px;
+    padding: 2px 2px 2px;
+}
+
+.res-logo {
+    padding: 2px 2px 2px;
+    max-width: 90%;
+    max-height: 100%
+}
+
+.ResCardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
