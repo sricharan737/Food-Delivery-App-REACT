@@ -1,6 +1,7 @@
 import RestaurantCard from "../components/RestaurantCard.js";
 import { useState, useEffect } from "react";
 import Shimmer from "../components/Shimmer.js";
+import { Link } from "react-router-dom";
 
 const Body = () => {
 	const [restaurantList, setRestaurantList] = useState([]);
@@ -13,21 +14,19 @@ const Body = () => {
 
 	const fetchData = async () => {
 		const data = await fetch(
-			"https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
+			"https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.3950065&lng=78.4345022&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
 		);
 		const json = await data.json();
 
 		setRestaurantList(
-			json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+			json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
 				?.restaurants
 		);
 
 		setFilteredRestaurants(
-			json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+			json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
 				?.restaurants
 		);
-
-
 	};
 
 	//Conditional Rendering
@@ -61,7 +60,7 @@ const Body = () => {
 									.includes(searchText.toLowerCase())
 							);
 
-							setFilteredRestaurants(filteredRestaurants)
+							setFilteredRestaurants(filteredRestaurants);
 						}}>
 						Submit
 					</button>
@@ -81,7 +80,9 @@ const Body = () => {
 			</div>
 			<div className="ResCardsContainer">
 				{filteredRestaurants?.map((x) => (
-					<RestaurantCard key={x.info.id} restData={x} />
+					<Link key={x.info.id} to={"/restaurants/" + x.info.id}>
+						<RestaurantCard restData={x} />
+					</Link>
 				))}
 			</div>
 		</div>
