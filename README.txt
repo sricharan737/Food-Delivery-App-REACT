@@ -67,3 +67,22 @@ Two types of Export/Import
 # Two types of Routing in web apps
 - Client side Routing
 - Server side Routing
+
+# Redux Toolkit
+- Install @reduxjs/tookit and react-redux
+- Build our own store 
+- Connect our store to our app
+- Create a Slice (cartSlice)
+- dispatch(action)
+- Selector 
+
+# Types of testing (developer)
+- Unit testing
+- Integration testing
+- End to End testing 
+
+    - Install React Testing Library
+    - Install Jest 
+        - Install Babel dependency in jest as parcel uses babel behind the scenes
+    - Configure Jest 
+

@@ -2,53 +2,51 @@ import React from "react";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { CDN_URL } from "../utils/constants";
-import {useParams} from "react-router-dom";
-import { MENU_URL } from "../utils/constants";
-
+import { useParams } from "react-router-dom";
+import RestaurantCategory from "./RestaurantCategory";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
-	const [resInfo, setResInfo] = useState(null);
+	const { resId } = useParams();
 
-    const {resId} = useParams();    
+	const resInfo = useRestaurantMenu(resId);
 
-	useEffect(() => {
-		fetchMenu();
-	}, []);
-
-	const fetchMenu = async () => {
-		const data = await fetch(
-			MENU_URL+resId
-		);
-		const json = await data.json();
-		setResInfo(json.data);
-	};
+	const [showIndex, setShowIndex] = useState(null);
 
 	if (resInfo == null) return <Shimmer />;
 
 	const { name, cuisines, cloudinaryImageId, costForTwoMessage } =
 		resInfo?.cards[2]?.card?.card?.info;
 
-	const { itemCards } =
-		resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]
-			?.card?.card;
+
+	const categories =
+		resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+			(x) =>
+				x?.card?.card?.["@type"] ==
+				"type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+		);
+	
 
 	return (
-		<div className="Menu">
-			<h1>{name}</h1>
+		<div className="Menu flex flex-col items-center">
+			<h1 className="text-4xl font-semibold m-2">{name}</h1>
 			<img
-				className="res-image"
+				className="res-image w-96 m-2 b-2  "
 				alt="Restaurant image"
 				src={CDN_URL + cloudinaryImageId}></img>
-			<h3>{cuisines.join(", ")}</h3>
-			<h3>{costForTwoMessage}</h3>
-			<h2>
-				Menu </h2>
-				<ul>
-					{itemCards.map((x) => (
-						<li key = {x?.card?.info?.id}> {x?.card?.info?.name} - Rs {x?.card?.info?.price/100}</li>
-					))}
-				</ul>
-			
+			<h3 className="m-2 text-2xl">{cuisines.join(", ")}</h3>
+			<h3 className="m-2 text-2xl">{costForTwoMessage}</h3>
+			<h2 className="m-2 pt-8 text-4xl font-semibold">Menu </h2>
+
+			{/*Category accordians */}
+			{categories.map((x , index) => (
+				<RestaurantCategory
+					key={x?.card?.card?.title}
+					data={x?.card?.card}
+					showItems={index == showIndex ? true : false}
+					setShowIndex = {() => setShowIndex(showIndex ? null : index)}
+				/>
+			))}
 		</div>
 	);
 };
