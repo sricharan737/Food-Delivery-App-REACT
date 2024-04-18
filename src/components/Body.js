@@ -59,6 +59,7 @@ const Body = () => {
 				<div className="searchBar mx-2 p-4 ">
 					<input
 						type="text"
+						data-testid = "searchbox"
 						className="search-box m-2 px-2 py-0.5 border-2 rounded-md"
 						value={searchText}
 						onChange={(e) => {
@@ -67,6 +68,7 @@ const Body = () => {
 						placeholder=" Search..."></input>
 					<button
 						className="submit-btn px-4 py-1 bg-red-100 rounded-md"
+						data-testid = "searchbutton"
 						onClick={() => {
 							const filteredRestaurants = restaurantList.filter((x) =>
 								x.info.name

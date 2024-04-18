@@ -11,6 +11,7 @@ const ItemList = ({ items }) => {
 		<div>
 			{items.map((x) => (
 				<div
+					data-testid= "fooditems"
 					className="p-2 m-2 border-gray-200 border-b-2 text-left flex justify-between "
 					key={x?.card?.info?.id}>
 					<div className="w-9/12">
@@ -31,7 +32,7 @@ const ItemList = ({ items }) => {
 					</div>
 
 					<div className="w-3/12">
-						<button className="p-2 bg-black text-white shadow-md absolute m-auto rounded-b-md" 
+						<button data-testid = "addbtn" className="p-2 bg-black text-white shadow-md absolute m-auto rounded-b-md" 
 								onClick={()=> {
 									//Dispatch a action
 									dispatch(addItem(x))

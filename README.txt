@@ -84,5 +84,6 @@ Two types of Export/Import
     - Install React Testing Library
     - Install Jest 
         - Install Babel dependency in jest as parcel uses babel behind the scenes
-    - Configure Jest 
+    - Configure Jest
+    - Install jsdom library 
 

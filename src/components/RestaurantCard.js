@@ -11,7 +11,7 @@ const RestaurantCard = ({ restData }) => {
 	} = restData?.info;
 
 	return (
-		<div className="res-card m-4 p-4 w-56  bg-slate-200 rounded-md hover:bg-slate-300">
+		<div data-testid = "resCard" className="res-card m-4 p-4 w-56  bg-slate-200 rounded-md hover:bg-slate-300">
 			<img
 				className="res-logo rounded-md"
 				alt="dish image"
@@ -31,7 +31,9 @@ export const promotedRestaurantCard = (RestaurantCard) => {
 	return (props) => {
 		return (
 			<div>
-				<label className="absolute m-2 p-2 bg-black text-white rounded-md ">Open</label>
+				<label className="absolute m-2 p-2 bg-black text-white rounded-md ">
+					Open
+				</label>
 				<RestaurantCard {...props} />
 			</div>
 		);
