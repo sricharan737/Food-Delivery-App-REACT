@@ -1,4 +1,4 @@
-#REACT course by NAMSTEDEV
+#REACT
 
 # Parcel
 - Dev build
